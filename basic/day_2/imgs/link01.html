@@ -4,12 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 스타일(디자인)을 변경하는 태그
+        주로 head에 위치한다 
+    -->
+    <style>
+        /* 스타일 태그 안에서 주석 구간
+           적용되는 우선순위
+           태그에 직접지정 > style 지정 > 브라우저기본속성 
+
+        선택자{
+            디자인속성 : 값;
+        
+        }
+        
+        */
+        a{      /* a : 선택자 */
+            color: #08a;        /*글자색 변경*/
+            text-decoration: none;  /* 밑줄제거 */
+        }
+
+    </style>
 </head>
 <body>
     <hr/>
-    <a href="link01.html">그라폴리오</a>|
-    <a href="link02.html">패션</a>|
-    <a href="link03.html">디자인</a>|
+    <!-- font 태그 : 글자 속성 지정하는 태그 color :글자색
+        a 태그에서는 color 로 글자색 변경 불가 - 태그마다 동일한 속성을 부여하지 못함
+        a 태그 글자색 style="color: #090;"
+    -->
+    <font color="#f30">그라폴리오</font>|
+    <a color="#f30" href="link02.html">패션</a>|
+    <a style="color: #090;" href="link03.html">디자인</a>|
     <a href="link04.html">이미지변신</a>
     <hr/>
     <img src="../../../fff/과제1-시작/imgs05/a01.jpg" alt="">
