@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_link_img</title>
+</head>
+<body>
+    <h1>04_link_img</h1>
+    <!-- 
+    a 태그 : 다른페이지(사이트)로 이동
+    href : 도착지
+      절대주소 : 전체주소로 페이지 이동 
+            https://www.naver.com, E:\public\kt_2026_11\kt_front\basic\day_1\ccc.html
+      상대주소 : 현재페이지를 기준으로 페이지 이동
+            ../day_1/bbb.html  :  ../ 1단계 위의 폴더로 이동  
+            02_text.html : 현재파일과 같은 폴더위치
+
+    텍스트노드 : 클릭시 이동하는 이벤트발생
+    <태그>글자</태그>
+    태그 : 일반노드
+    글자 : 텍스트노드 => 태그안에 들어있는 내용
+
+    target : 이동하는 창 _blank : 새창, _self: 현재창(기본값)
+    -->
+    <a href="https://www.naver.com/">네이버</a>
+    <a href="https://www.daum.net" target="_blank">다음</a>
+    <a href="https://www.nate.com/" target="_self">네이트</a>
+    <a href="../day_1/bbb.html">bbb</a>
+    <a href="E:\public\kt_2026_11\kt_front\basic\day_1\ccc.html">ccc</a>
+    <a href="02_text.html">02_text</a>
+    <a href="../index.html">index</a>
+    <h2>파일실행</h2>
+    <!-- 브라우저에서 실행가능한 파일 : 실행
+        브라우저에서 실행 불가능한 파일 : 다운로드
+    -->
+    <a href="../day_1/aaa.txt">txt</a>
+    <a href="../day_1/son.jpg">jpg</a>
+    <a href="../day_1/ddd.xlsx">엑셀</a>
+    <a href="../day_1/fff.hwp">한글</a>
+
+    <h2>위치</h2>
+    <a href="05_song.html">05_song</a>
+    <a href="05_song.html#aa">aa</a>
+    <a href="05_song.html#bb">bb</a>
+    <a href="05_song.html#cc">cc</a>
+    <a href="05_song.html#dd">dd</a>
+
+    <h2>이미지</h2>
+    
+</body>
+</html>
