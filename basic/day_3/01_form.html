@@ -29,7 +29,9 @@
         <table border="">
             <tr>
                 <td>아이디</td>
-                <td><input name="pid"></td>
+                <td><input name="pid">
+                    <input type="button" value="중복확인">
+                </td>
             </tr>
             <tr>
                 <td>암호</td>
@@ -68,6 +70,25 @@
                 </td>
             </tr>
             <tr>
+                <td>학년</td>
+                <td>
+                    <input name="hh" type="number">
+                </td>
+            </tr>
+            <tr>
+                <td>전화</td>
+                <td>
+                    <input name="phone" type="tel">
+                </td>
+            </tr>
+            <tr>
+                <td>추천 email</td>
+                <td>
+                    <!-- 전송시 email 규칙 검사-->
+                    <input name="email3" type="email">
+                </td>
+            </tr>
+            <tr>
                 <td>성별</td>
                 <!--  radio : 1개만 선택 (name으로 묶음) -->
                 <td>
@@ -77,7 +98,7 @@
                 </td>
             </tr>
             <tr>
-                <td>성별</td>
+                <td>취미</td>
                 <!--  checkbox : 다중 선택 (name으로 묶음) -->
                 <td>
                     <input name="hobby" type="checkbox" value="game" checked>게임
@@ -109,10 +130,23 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <input type="submit" value="가입">
+                    <input type="submit" value="가입1">
+                    <!-- form 안의 button : submit 과 같은 기능 -->
+                    <button>가입2</button>
+                    <input type="reset" value="초기화">
                 </td>
             </tr>
         </table>
+    </form>
+
+    <form action="sch.html">
+        <select name="aaa" >
+            <option>제목</option>
+            <option>작성자</option>
+            <option>내용</option>
+        </select>
+        <input type="text" name="bbb">
+        <input type="submit" value="검색">
     </form>
 </body>
 </html>
