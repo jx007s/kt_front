@@ -13,7 +13,11 @@
             width: 800px;
             height: 700px;
             background-color: #ffa;
-            margin: auto;
+            margin: 30px auto;
+        }
+        #wrapper > div, header, nav, aside, main, article, section, footer{
+            border: 1px solid #fa0;
+            margin: 20px;
         }
     </style>
 </head>
@@ -32,5 +36,23 @@
         </div>
         <div>바닥입니다</div>
     </div>
+
+    <div id="wrapper">
+        <header>헤더입니다
+            <nav>상단메뉴바입니다</nav>
+        </header>
+        <aside>
+            측면메뉴입니다
+        </aside>
+        <main>메인입니다
+            <article>글자들입니다</article>
+            <section>구간입니다</section>
+        </main>
+        <footer>바닥입니다</footer>
+    </div>
 </body>
 </html>
+<!-- 
+1. 05_joinForm.html  회원가입 폼을 구성하세요
+2. 06_shop.html 쇼핑몰 상단 페이지를 구성하세요(div, semantic 을 활용)
+-->
