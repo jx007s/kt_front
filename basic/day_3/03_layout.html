@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_layout</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper{
+            width: 594px;
+            height: 400px;
+            background-color: #ff0;
+        }
+        #wrapper > div{ /* 
+            자식선택자  : 부모선택자 > 자식선택자 (바로 하위에만 해당)
+            */
+            border: 2px solid #fa0;
+            width: 150px;
+            height: 100px;
+            margin: 20px;
+
+            float: left;    /*전체행을 차지하지 않고 현재요소를 왼쪽으로 붙여서 정렬*/
+        }
+    </style>
+</head>
+<body>
+    <h1>03_layout</h1>
+    <div id="wrapper">
+        <div>1</div>
+        <div>2
+            <div>손자</div>
+        </div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <div id="abcd">
+        <div>나는아님1</div>
+        <div>나는아님2</div>
+        <div>나는아님3</div>
+        <div>나는아님4</div>
+        <div>나는아님5</div>
+        <div>나는아님6</div>
+    </div>
+    <style>
+        .menu{
+            background-color: #0ff;
+            /* 
+            margin: 300px;  상하좌우 모두 300px
+            margin: 20px 300px; 상하:20px  좌우300px
+            margin: 20px 50px 300px 100px; 
+                   상   우   하    좌 */
+            margin: 20px auto;
+            width: 600px;
+            height: 50px;
+        }
+        .menu > li{
+            background-color: #f0f;
+            width: 100px;
+            list-style: none; /*리스트의 머릿기호 삭제*/
+            float: left;
+            height: 48px;
+            line-height: 48px; /*글자라인이 차지하는 높이*/
+            text-align: center;/*글자 정렬*/
+            border: 1px solid #ccc;
+        }
+
+    </style>
+
+    <ul class="menu">
+        <li>회사소개</li>
+        <li>제품</li>
+        <li>갤러리</li>
+        <li>마이페이지</li>
+        <li>고객센터</li>
+    </ul>
+</body>
+</html>

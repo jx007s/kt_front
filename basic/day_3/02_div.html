@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_div</title>
+    <style>
+        *{
+            margin: 0;/* 전체선택자 */
+        }
+        div, span{ /* 태그선택자 : div 태그 모두에게 적용
+            그룹 선택자(A, B): 여러 선택자에 동일한 스타일을 일괄 적용
+            */
+            border: 1px solid #cccccc;
+        }
+        .bb{ /* 클래스선택자 : .클래스명 */
+            background: #ffff00;
+            margin: 10px;  /* 태그직접입력 > style태그(클래스,ID > 태그 > 전체 ) */
+        }
+        #cc{    /*아이디선택자 : #아이디명*/
+            color: #ff0000;
+        }
+        .bb, span{ /* 클래스선택자 : .클래스명 */
+            background: #00ff00;  /* display: block (div) , inline (span) 모두 적용 */
+            width: 300px;   /* display: block (div)에적용,  inline (span)은 적용 안함 */
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>02_div</h1>
+
+    <div>box1</div>
+    <div class="bb">box2</div>
+    <div id="cc">box3</div>
+    <div id="cc" class="bb">box4</div>
+    <div>box5</div>
+    <div>box6</div>
+    <div>box7</div>
+
+
+    <span>ss1</span><span>ss2</span><span>ss3</span>
+    <span>ss4</span>    <span>ss5</span>
+    <span>ss6</span>
+    <span>ss7</span>
+    <span>ss8</span>
+    <div>box8</div>
+    <div>box9</div>
+    <span>ss9</span>
+    <span>ss10</span>
+    <span>ss11</span>
+    <span>ss12</span>
+</body>
+</html>
+
+<!--
+
+#ff0000
+ ff 00 00  ==> 16진수표기
+ R  G  B    
+ 색(3byte) + 투명도(1byte) ==> 32비트 : 4Byte
+
+문자
+한글 현대 한글 조합 가능 글자 수: 초성 19개 × 중성 21개 × 종성 28개(받침 없음 포함) = 11,172자.: 2byte 필요
+256 * 256
+외국글자 : 3byte 필요 ==> UTF-8 (글로벌 인코딩 표준)
+
+
+
+                                                        데이터
+bit                                                     byte
+(전구)
+                                BCD         ASCII       EBCDIC
+1       2       3       4   5   6           7           8
+2       4       8       16  32  64          128         256
+-------------------------------------------------------------
+0(off)  00  0   000     0~9     A~Z(26)     특수기호    +/-
+1(on)   01  1   001             a~z(26)
+        10  2   010             0~9(10)
+        11  3   011             -------
+                100                 62
+                101  
+                110
+                111
+
+
+    기본 선택자 : 태그선택자
+    -->
