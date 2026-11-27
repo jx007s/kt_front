@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_bmp</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            width:1200px;
+            height: 200px;
+            background-color: #ff0;
+            margin: 20px;
+        }
+        section > div{
+            float: left;
+            background-color: #0f0;
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+        section > div > img{
+            width: 100px;
+            height: 100px;
+        }
+        /* .pp > div , .bb > div , .rr > div{ margin: 5px;} */
+        .pp > div , .mm > div{ border:3px solid #f00;}
+
+        /* margin : border 바깥의 여백(배경색이 없음)*/
+        .mm > .d1{ margin: 20px; /*상하좌우 모두 20px*/}
+        .mm > .d2{ margin: 20px 80px; /*상하20px 좌우 80px*/}
+        .mm > .d3{ margin: 20px 80px 30px 50px; }
+                          /*상  우    하   좌*/
+        .mm > .d4{ 
+            margin-left: 50px; 
+            margin-right: 80px; 
+            margin-top: 20px; 
+            margin-bottom: 30px; 
+        }
+
+        /* padding : border 안쪽의 여백(배경색으로 채워짐)*/
+       
+        .pp > .d1{ padding: 20px; /*상하좌우 모두 20px*/}
+        .pp > .d2{ padding: 20px 80px; /*상하20px 좌우 80px*/}
+        .pp > .d3{ padding: 20px 80px 30px 50px; }
+                          /*상  우    하   좌*/
+        .pp > .d4{ 
+            padding-left: 50px; 
+            padding-right: 80px; 
+            padding-top: 20px; 
+            padding-bottom: 30px; 
+        }
+
+        /* border */
+        .bb > .d1{ border: 5px dotted #00f;}
+                        /*선두께 선타입  선색   */
+        .bb > .d2{ 
+            border-left: 5px dotted #f00;
+            border-right: 10px dotted #fa0;
+            border-top: 20px dotted #00f;
+            border-bottom: 30px dotted #f0f;
+        }
+        .bb > .d3{ 
+            border-left: 10px solid #f00;
+            border-right: 10px dashed #fa0;
+            border-top: 10px double #00f;
+            border-bottom: 10px ridge #f0f;
+        }
+        .bb > .d4{ 
+            border-left: 10px groove #f00;
+            border-right: 10px inset #fa0;
+            border-top: 10px outset #00f;
+            border-bottom: 10px unset #f0f;
+        }
+
+        /* border-radius */
+        .rr > .d1{ border-radius: 20px;}
+                        /* 모서리 라운드 처리   */
+        .rr > .d2{ border-radius: 20px 50px;}
+                       /*          ↖↘  ↗↙   */
+        .rr > .d3{ border-radius: 20px  5px 30px 50px;}
+                       /*          ↖  ↗     ↘    ↙   */
+        .rr > .d4{ 
+            border-top-left-radius: 20px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 50px;
+                       /*          ↖  ↗     ↘    ↙   */
+        }
+
+        /* box-shadow : 그림자효과 */
+        .bs > .d1{ box-shadow: 5px 5px 5px #000;}
+                        /* 왼쪽이동 위이동 퍼짐  그림자색 */
+
+        .bs > .d2{ box-shadow: -5px 20px 30px #f00;}
+                        /* 왼쪽이동 위이동 퍼짐  그림자색 */
+
+        .bs > .d3{ 
+            box-shadow: 10px 0px 0px #f00;
+            box-shadow: 0px 10px 0px #00f;/*2개가 적용되지 않고 마지막 값만 적용*/
+        }
+        .bs > .d4{ 
+            /* 다중 적용시 ',' 로 구분하여 적용*/
+            box-shadow: 10px 0px 0px #f00,
+                         0px 10px 0px #00f,
+                        -10px 0px 0px #f0f,
+                         0px -10px 0px #0ff;
+        }
+        .bs > .d5{ 
+            /* 다중 적용시 ',' 로 구분하여 적용*/
+            box-shadow: 
+            
+            10px 0px 0px #fa0,
+            0px 10px 0px #00f,
+            -10px 0px 0px #f0f,
+            0px -10px 0px #0ff,
+            10px 10px 0px #f00,
+            10px -10px 0px #000,
+            -10px 10px 0px #0aa,
+            -10px -10px 0px #3f3;
+        }
+
+
+        /* box-shadow inset : 그림자효과 - 음각 */
+        .bsi > .d1{ box-shadow:inset 5px 5px 5px #000;}
+                        /* 음각 왼쪽이동 위이동 퍼짐  그림자색 */
+
+        .bsi > .d2{ box-shadow: inset -5px 20px 30px #f00;}
+                        /*음각 왼쪽이동 위이동 퍼짐  그림자색 */
+
+        .bsi > .d3{ 
+            /* 다중 적용시 ',' 로 구분하여 적용*/
+            box-shadow:inset 10px 0px 0px #f00,
+                        inset 0px 10px 0px #00f,
+                        inset -10px 0px 0px #f0f,
+                        inset 0px -10px 0px #0ff;
+        }
+
+        .bsi > .d4{ 
+            box-shadow:inset 5px 5px 10px #000,
+                            5px 5px 10px #000;
+                            /*그림자 양각, 음각 동시사용가능*/
+        }
+        .bsi > .d5{ 
+            border-radius: 50px;
+            box-shadow:inset 10px 10px 20px #fff,
+                            10px 10px 20px #000;
+                            /*그림자 양각, 음각 동시사용가능*/
+        }
+        .bsi > .d6{ 
+            border-radius: 50px;
+            box-shadow:inset 10px 10px 10px #fff,
+                        inset -10px -10px 10px #444;
+                            /*그림자 음각이용한 엠보싱*/
+        }
+        .aa, .gg{
+            background-image: url('../../fff/back_원본.jpg');
+            background-size: 400px;
+            background-position: 0px 200px;
+        } 
+        
+        .aa > .d1{ 
+            background-color: rgba(255,0,0,1);
+                                    /*
+                                    rgba : 색의 투명도 조정
+                                    R,G,B, A
+                                    R,G,B : 0(반영안함)~255(색상전체반영)
+                                    A : 0(안보임)~1(보임)
+                                    */
+        }
+
+        .aa > .d2{ 
+            background-color: rgba(255,0,0,0.5);
+                                    /*R,G,B, A
+                                    R,G,B : 0(반영안함)~255(색상전체반영)
+                                    A : 0(안보임)~1(보임)
+                                    */
+        }
+        .aa > .d3{ 
+            background-color: rgba(255,0,0,0);
+                                    /*R,G,B, A
+                                    R,G,B : 0(반영안함)~255(색상전체반영)
+                                    A : 0(안보임)~1(보임)
+                                    */
+        }
+        .aa > .d4{ 
+            opacity: 0.5;   /*투명도  0(안보임)~1(보임) */
+        }  
+        .aa > .d5{ 
+            opacity: 0;   /*보이지만 않을뿐 공간은 확보하고 있음*/
+        }  
+        .aa > .d6{ 
+            background-color: rgba(0,255,0,0.25);
+            backdrop-filter: blur(8px);/*간유리 재질*/
+        } 
+        
+        /* 그라디언트
+            https://cssgradient.io/  , https://www.colorzilla.com/gradient-editor/
+        */
+        .gg > .d1{ 
+            
+            background: linear-gradient(to right,  #ff0000 0%,#e1ff00 49%,#5405ff 100%); 
+        }
+        .gg > .d2{ 
+            
+            background: radial-gradient(ellipse at center,  rgba(255,0,0,1) 0%,rgba(234,177,0,1) 34%,rgba(231,203,0,0) 39%,rgba(225,255,0,0) 49%,rgba(217,240,15,0) 52%,rgba(209,225,30,1) 55%,rgba(84,5,255,1) 100%); 
+
+        }
+        .gg > .d3{ 
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff0000+0,e1ff00+49,5405ff+100&1+0,1+34,0+39,0+39,0+52,1+55,1+100 */
+            background: linear-gradient(135deg,  rgba(255,0,0,1) 0%,rgba(234,177,0,1) 34%,rgba(231,203,0,0) 39%,rgba(225,255,0,0) 49%,rgba(217,240,15,0) 52%,rgba(209,225,30,1) 55%,rgba(84,5,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+        }
+        .gg > .d4{ 
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff0000+0,e1ff00+49,5405ff+100 */
+            background: linear-gradient(to right,  #ff0000 0%,#e1ff00 49%,#5405ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        }
+        .gg > .d5{ 
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff0000+0,e1ff00+49,5405ff+100 */
+            background: linear-gradient(to right,  #ff0000 0%,#e1ff00 49%,#5405ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        }
+    </style>
+</head>
+<body>
+    <h1>01_bmp</h1>
+    <h2>margin</h2>
+    <section class="mm">
+        <div class="d1"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d2"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d3"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d4"><img src="../../fff/AKYO5468.JPG"></div>
+    </section>
+    <h2>padding</h2>
+    <section class="pp">
+        <div class="d1"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d2"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d3"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d4"><img src="../../fff/AKYO5468.JPG"></div>
+    </section>
+    <h2>border</h2>
+    <section class="bb">
+        <div class="d1"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d2"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d3"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d4"><img src="../../fff/AKYO5468.JPG"></div>
+    </section>
+
+    <h2>border-radius</h2>
+    <section class="rr">
+        <div class="d1"></div>
+        <div class="d2"></div>
+        <div class="d3"></div>
+        <div class="d4"></div>
+    </section>
+
+    <h2>box-shadow</h2>
+    <section class="bs">
+        <div class="d1"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d2"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d3"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d4"><img src="../../fff/AKYO5468.JPG"></div>
+        <div class="d5"><img src="../../fff/AKYO5468.JPG"></div>
+    </section>
+
+    <h2>box-shadow inset</h2>
+    <section class="bsi">
+        <div class="d1"></div>
+        <div class="d2"></div>
+        <div class="d3"></div>
+        <div class="d4"></div>
+        <div class="d5"></div>
+        <div class="d6"></div>
+    </section>
+
+    <h2>alpha</h2>
+    <section class="aa">
+        <div class="d1">글자1</div>
+        <div class="d2">글자2</div>
+        <div class="d3">글자3</div>
+        <div class="d4">글자4</div>
+        <div class="d5">글자5</div>
+        <div class="d6">글자6</div>
+    </section>
+
+    <h2>gradient</h2>
+    <section class="gg">
+        <div class="d1">글자1</div>
+        <div class="d2">글자2</div>
+        <div class="d3">글자3</div>
+        <div class="d4">글자4</div>
+        <div class="d5">글자5</div>
+        <div class="d6">글자6</div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_display</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            width: 800px;
+            height: 300px;
+            background-color: #ff0;
+        }
+
+        section > div, section > span, section > img{
+             width: 100px;
+            height: 30px;
+            border: 1px solid #888;
+        }
+        .bb > div, .bb > span, .bb > img{
+            display: block;
+        }
+        .ii > div, .ii > span, .ii > img{
+            display: inline;
+        }  
+        .ib > div, .ib > span, .ib > img{
+            display: inline-block;
+        }
+        .nn > .ss{
+            display: none;/*공간차지 안함*/
+        }  
+        .nn > .vv{
+            opacity: 0;/*공간차지*/
+        }
+        /*
+                                줄바꿈  크기  보이기    공간차지 
+        block : div             O       O       O       O
+        inline-block : img      X       O       O       o
+        inline : span           X       X       O       o
+        opacity:0               X       X       X       O       
+        none                    X       X       X       x
+        */  
+    </style>
+</head>
+<body>
+    <h1>02_display</h1>
+    <h3>기본</h3>
+    <section >
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span>span2</span>
+        <span>span3</span>
+        <span>span4</span>
+        <img src="../../fff/CDCL8013.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h3>block</h3>
+    <section class="bb">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span>span2</span>
+        <span>span3</span>
+        <span>span4</span>
+        <img src="../../fff/CDCL8013.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h3>inline</h3>
+    <section class="ii">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span>span2</span>
+        <span>span3</span>
+        <span>span4</span>
+        <img src="../../fff/CDCL8013.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h3>inline-block</h3>
+    <section class="ib">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span>span2</span>
+        <span>span3</span>
+        <span>span4</span>
+        <img src="../../fff/CDCL8013.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h3>none</h3>
+    <section class="nn">
+        <div>div1</div>
+        <div class="ss">div2</div>
+        <div class="vv">div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span class="ss">span2</span>
+        <span class="vv">span3</span>
+        <span>span4</span>
+        <img  class="ss" src="../../fff/AKYO5468.JPG" alt="">
+        <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+</body>
+</html>
