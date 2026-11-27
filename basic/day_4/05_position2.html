@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_position</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        main > div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+        }
+        
+        main{
+            width: 300px;
+            height: 300px;
+            float: left;
+            margin: 20px;
+            background-color: #ff0;
+        }
+        .ss{position: static;}
+        .rr{position: relative;}
+        .aa{
+            position: absolute;
+            left: 680px;
+        }
+        .m1{
+            position: static;
+        }
+        .m2{
+            position: relative;
+            left: 120px;
+            top: 40px;
+        }
+        .m3{
+            position: absolute;
+            /*부모의 position : relative,absolute 일경우 부모의 좌표를 기준으로 이동
+                                static  인경우 부모 이전의 relative,absolute 인 부모좌표를 기준으로함 
+                                 - 없을경우 브라우저 기본좌표가 기준
+                                   
+
+            */
+            left: 120px;
+            top: 40px;
+        }
+
+        .rr2{
+            position: absolute;
+            top:600px;
+            left: 300px;
+        }
+        .rr2 > div{
+            position: absolute;
+        }
+        .i1{ background-color: #f00;  left : 20px; top:20px; }
+        .i2{ background-color: #0f0;  left : 40px; top:40px; 
+            z-index: 1;
+            /*포지셔닝된 요소(static 제외) 및 플렉스·그리드 아이템의 앞뒤 쌓임 순서(Stacking Order)를 제어 (숫자가 클수록 위쪽에 표시)
+                기본값 : 0
+            */
+        }
+        .i3{ background-color: #0ff;  left : 60px; top:60px; }
+        .i4{ background-color: #fa0;  left : 80px; top:80px; }
+    </style>
+</head>
+<body>
+    <h1>05_position2</h1>
+    
+    <main class="ss">
+        <h2>ss</h2>
+        <div class="m1">ss1</div>
+        <div class="m2">ss2</div>
+        <div class="m3">ss3</div>
+        <div>ss4</div>
+    </main>
+    
+    <main class="rr">
+        <h2>rr</h2>
+        <div class="m1">rr1</div>
+        <div class="m2">rr2</div>
+        <div class="m3">rr3</div>
+        <div>rr4</div>
+    </main>
+    
+    <main class="aa">
+        <h2>aa</h2>
+        <div class="m1">aa1</div>
+        <div class="m2">aa2</div>
+        <div class="m3">aa3</div>
+        <div>aa4</div>
+    </main>
+
+    <main class="rr2">
+        <h2>rr2</h2>
+        <div class="i1">i1</div>
+        <div class="i2">i2</div>
+        <div class="i3">i3</div>
+        <div class="i4">i4</div>
+    </main>
+</body>
+</html>
+<!----
+   06_banner.html
+   4x4 형태의 이미지를 배너형태에서 스크롤 구현해주세요
+
+-->

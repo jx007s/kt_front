@@ -10,12 +10,18 @@
             padding: 0;
         }
         section{
-            width: 800px;
+            width: 1600px;
             height: 300px;
             background-color: #ff0;
         }
 
-        section > div, section > span, section > img{
+        main{
+            width: 550px;
+            height: 500px;
+            background-color: #0f0;
+        }
+
+        section > div, section > span, section > img, main > div{
              width: 100px;
             height: 30px;
             border: 1px solid #888;
@@ -42,7 +48,43 @@
         inline : span           X       X       O       o
         opacity:0               X       X       X       O       
         none                    X       X       X       x
-        */  
+        */
+        
+        .ff{
+            display: flex; /* 안의 item을 block, float 형태로 변환
+                            item 정렬 방식을 지정
+            */
+        }
+        .col{
+            flex-direction: column; /*item 나열방향 , 기본값(row)*/ 
+        }
+        .rr{
+            flex-direction: row-reverse; 
+        }
+        .cr{
+            flex-direction: column-reverse; 
+        }
+        .it_c{
+            align-items: center; /* 방향 직교에서의 나열 위치, 기본값(flex-start), 세로중앙*/ 
+        }
+        .it_e{
+            align-items: flex-end;/*하단*/
+        }
+        .jj_c{
+            justify-content: center;    /* 나열 방향에서의 정렬위치 ,  기본값(flex-start), 가로중앙*/
+        }
+        .jj_e{
+            justify-content: flex-end;    /* 나열 방향에서의 정렬위치, 오른쪽*/
+        }
+        .jj_b{
+            justify-content: space-between;    /* 요소 배분정렬 , 양끝 마진없음*/
+        }
+        .jj_a{
+            justify-content: space-around;    /* 요소 배분정렬 , 양끝간격 = 사이간격*1/2 */
+        }
+        .jj_ev{
+            justify-content: space-evenly;    /* 요소 배분정렬 , 양끝간격 = 사이간격 */
+        }
     </style>
 </head>
 <body>
@@ -117,5 +159,215 @@
         <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
         <img src="../../fff/CDCL8013.JPG" alt="">
     </section>
+    <h3>flex</h3>
+    <h4>기본</h4>
+    <section class="ff">
+        <div>div1</div>
+        <div class="ss">div2</div>
+        <div class="vv">div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span class="ss">span2</span>
+        <span class="vv">span3</span>
+        <span>span4</span>
+        <img  class="ss" src="../../fff/AKYO5468.JPG" alt="">
+        <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h4>column</h4>
+    <section class="ff col"><!--class를 띄어쓰기를 이용하여 여러개 지정 -->
+        <div>div1</div>
+        <div class="ss">div2</div>
+        <div class="vv">div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span class="ss">span2</span>
+        <span class="vv">span3</span>
+        <span>span4</span>
+        <img  class="ss" src="../../fff/AKYO5468.JPG" alt="">
+        <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h4>row-reverse</h4>
+    <section class="ff rr">
+        <div>div1</div>
+        <div class="ss">div2</div>
+        <div class="vv">div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span class="ss">span2</span>
+        <span class="vv">span3</span>
+        <span>span4</span>
+        <img  class="ss" src="../../fff/AKYO5468.JPG" alt="">
+        <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h4>column-reverse</h4>
+    <section class="ff cr">
+        <div>div1</div>
+        <div class="ss">div2</div>
+        <div class="vv">div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span class="ss">span2</span>
+        <span class="vv">span3</span>
+        <span>span4</span>
+        <img  class="ss" src="../../fff/AKYO5468.JPG" alt="">
+        <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h4>align-items_center</h4>
+    <section class="ff it_c">
+        <div>div1</div>
+        <div class="ss">div2</div>
+        <div class="vv">div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span class="ss">span2</span>
+        <span class="vv">span3</span>
+        <span>span4</span>
+        <img  class="ss" src="../../fff/AKYO5468.JPG" alt="">
+        <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h4>align-items_end</h4>
+    <section class="ff it_e">
+        <div>div1</div>
+        <div class="ss">div2</div>
+        <div class="vv">div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span class="ss">span2</span>
+        <span class="vv">span3</span>
+        <span>span4</span>
+        <img  class="ss" src="../../fff/AKYO5468.JPG" alt="">
+        <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+
+    <h4>justify-content_center</h4>
+    <section class="ff jj_c">
+        <div>div1</div>
+        <div class="ss">div2</div>
+        <div class="vv">div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span class="ss">span2</span>
+        <span class="vv">span3</span>
+        <span>span4</span>
+        <img  class="ss" src="../../fff/AKYO5468.JPG" alt="">
+        <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h4>justify-content_end</h4>
+    <section class="ff jj_e">
+        <div>div1</div>
+        <div class="ss">div2</div>
+        <div class="vv">div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span class="ss">span2</span>
+        <span class="vv">span3</span>
+        <span>span4</span>
+        <img  class="ss" src="../../fff/AKYO5468.JPG" alt="">
+        <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h4>justify-content_between</h4>
+    <section class="ff jj_b">
+        <div>div1</div>
+        <div class="ss">div2</div>
+        <div class="vv">div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span class="ss">span2</span>
+        <span class="vv">span3</span>
+        <span>span4</span>
+        <img  class="ss" src="../../fff/AKYO5468.JPG" alt="">
+        <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h4>justify-content_around</h4>
+    <section class="ff jj_a">
+        <div>div1</div>
+        <div class="ss">div2</div>
+        <div class="vv">div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span class="ss">span2</span>
+        <span class="vv">span3</span>
+        <span>span4</span>
+        <img  class="ss" src="../../fff/AKYO5468.JPG" alt="">
+        <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+    <h4>justify-content_evenly</h4>
+    <section class="ff jj_ev">
+        <div>div1</div>
+        <div class="ss">div2</div>
+        <div class="vv">div3</div>
+        <div>div4</div>
+        <span>span1</span>
+        <span class="ss">span2</span>
+        <span class="vv">span3</span>
+        <span>span4</span>
+        <img  class="ss" src="../../fff/AKYO5468.JPG" alt="">
+        <img  class="vv" src="../../fff/NBDW3702.JPG" alt="">
+        <img src="../../fff/CDCL8013.JPG" alt="">
+    </section>
+
+    <style>
+        .ww{
+            flex-wrap: wrap;    /* item이 over 할경우 다음 행으로 이동(개행과 같은 처리) 
+                                    no-wrap(기본값) : 모두 한줄로 처리하며 item의 크기도 변경한다.
+            */
+        }
+        .gg{
+            gap: 30px;    /* item 간격 */
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <h4>wrap</h4>
+    <main class="ff ww">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+        <div>div4</div>
+        <div>div5</div>
+        <div>div6</div>
+        <div>div7</div>
+        <div>div8</div>
+        <div>div9</div>
+        <div>div10</div>
+        <div>div11</div>
+        <div>div12</div>
+        <div>div13</div>
+        <div>div14</div>
+        <div>div15</div>
+        <div>div16</div>
+        <div>div17</div>
+    </main>
+
+    <h4>wrap, gap</h4>
+    <main class="ff ww gg">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+        <div>div4</div>
+        <div>div5</div>
+        <div>div6</div>
+        <div>div7</div>
+        <div>div8</div>
+        <div>div9</div>
+        <div>div10</div>
+        <div>div11</div>
+        <div>div12</div>
+        <div>div13</div>
+        <div>div14</div>
+        <div>div15</div>
+        <div>div16</div>
+        <div>div17</div>
+    </main>
 </body>
 </html>

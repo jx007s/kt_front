@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_position</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+        }
+        /*
+        static (기본값): 일반적인 문서 흐름에 따라 순차 배치되며, top/left 등 위치 속성과 z-index가 적용되지 않음
+
+relative: 원래 자신의 정상 위치를 기준으로 상대 이동하며, 원래 차지하던 공간(자리)은 그대로 유지됨 (자식 absolute 요소의 기준점 역할로 자주 활용)
+
+absolute: 문서 흐름에서 완전히 빠져나와 가장 가까운 position: static이 아닌 조상 요소(없으면 초기 컨테이닝 블록/뷰포트)를 기준으로 배치됨
+
+fixed: 뷰포트(브라우저 창)를 기준으로 고정 배치되며, 스크롤해도 화면의 같은 위치에 유지됨 (고정 헤더, 플로팅 버튼 등)
+
+sticky: 스크롤 위치에 따라 relative처럼 동작하다가 지정한 임계값(top: 0 등)에 도달하면 해당 위치에 붙어 고정됨 (섹션 헤더, 사이드 메뉴 등)
+
+z-index: 포지셔닝된 요소(static 제외) 및 플렉스·그리드 아이템의 앞뒤 쌓임 순서(Stacking Order)를 제어 (숫자가 클수록 위쪽에 표시)
+        
+        */
+        .st{   position: static;       }
+        .re{   position: relative;       }
+        .ab{   position: absolute;       }
+        .bb1{
+            background-color: rgba(255,255,0,0.5);
+            top: 130px;
+            left: 200px;
+        }
+        .bb2{
+            background-color: rgba(255,0,0,0.5);
+            top: 160px;
+            left: 220px;
+        }
+        main{
+            width: 300px;
+            height: 300px;
+            border: 2px solid #ccc;
+            float: left;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>04_position</h1>
+    <h2>static</h2>
+    <div class="st">st1</div>
+    <div class="st bb1">st2</div>
+    <div class="st bb2">st3</div>
+    <div class="st">st4</div>
+    <h2>relative</h2>
+    <div class="re">re1</div>
+    <div class="re bb1">re2</div>
+    <div class="re bb2">re3</div>
+    <div class="re">re4</div>
+    <h2>absolute</h2>
+    <div class="ab">ab1</div>
+    <div class="ab bb1">ab2</div>
+    <div class="ab bb2">ab3</div>
+    <div class="ab">ab4</div>
+    
+</body>
+</html>
